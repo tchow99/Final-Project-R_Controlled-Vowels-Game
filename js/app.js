@@ -38,7 +38,204 @@ var squirrel = {
 	answerVowel: "ir"
 };
 
-var objArray = [shark, spider, turtle, horse, squirrel];
+var nerve = {
+	spelling: "n  _  _  v e",
+	fullSpelling: "n e r v e",
+	imgName: "nerve",
+	answerVowel: "er"
+};
+
+var tiger = {
+	spelling: "t i g  _  _  ",
+	fullSpelling: "t i g e r",
+	imgName: "tiger",
+	answerVowel: "er"
+};
+
+var water = {
+	spelling: "w a t  _  _  ",
+	fullSpelling: "w a t e r",
+	imgName: "water",
+	answerVowel: "er"
+};
+
+var feather = {
+	spelling: "f e a t h  _  _  ",
+	fullSpelling: "f e a t h e r",
+	imgName: "feather",
+	answerVowel: "er"
+};
+
+var germs = {
+	spelling: "g  _  _  m  s",
+	fullSpelling: "g e r m s",
+	imgName: "germs",
+	answerVowel: "er"
+};
+
+var church = {
+	spelling: "c h  _  _  c h",
+	fullSpelling: "c h u r c h",
+	imgName: "church",
+	answerVowel: "ur"
+};
+
+var nurse = {
+	spelling: "n  _  _  s  e",
+	fullSpelling: "n u r s e",
+	imgName: "nurse",
+	answerVowel: "ur"
+};
+
+var purse = {
+	spelling: "p  _   _  s e",
+	fullSpelling: "p u r s e",
+	imgName: "purse",
+	answerVowel: "ur"
+};
+
+var turkey = {
+	spelling: "t  _  _  k e y",
+	fullSpelling: "t u r k e y",
+	imgName: "turkey",
+	answerVowel: "ur"
+};
+
+var curtain = {
+	spelling: "c  _  _  t a i n",
+	fullSpelling: "c u r t a i n",
+	imgName: "curtain",
+	answerVowel: "ur"
+};
+
+var scarf = {
+	spelling: "s c  _  _  f",
+	fullSpelling: "s c a r f",
+	imgName: "scarf",
+	answerVowel: "ar"
+};
+
+var harp = {
+	spelling: "h  _  _  p",
+	fullSpelling: "h a r p",
+	imgName: "harp",
+	answerVowel: "ar"
+};
+
+var garden = {
+	spelling: "g  _  _  d e n",
+	fullSpelling: "g a r d e n",
+	imgName: "garden",
+	answerVowel: "ar"
+};
+
+var heart = {
+	spelling: "h e  _  _  t",
+	fullSpelling: "h e a r t",
+	imgName: "heart",
+	answerVowel: "ar"
+};
+
+var marbles = {
+	spelling: "m  _  _  b l e s",
+	fullSpelling: "m a r b l e s",
+	imgName: "marbles",
+	answerVowel: "ar"
+};
+
+var farm = {
+	spelling: "f  _  _  m",
+	fullSpelling: "f a r m",
+	imgName: "farm",
+	answerVowel: "ar"
+};
+
+var circle = {
+	spelling: "c  _  _  c l e",
+	fullSpelling: "c i r c l e",
+	imgName: "circle",
+	answerVowel: "ir"
+};
+
+var shirt = {
+	spelling: "s h  _  _  t",
+	fullSpelling: "s h i r t",
+	imgName: "shirt",
+	answerVowel: "ir"
+};
+
+
+var stir = {
+	spelling: "s t  _  _  ",
+	fullSpelling: "s t i r",
+	imgName: "stir",
+	answerVowel: "ir"
+};
+
+var bird = {
+	spelling: "b  _  _  d",
+	fullSpelling: "b i r d",
+	imgName: "bird",
+	answerVowel: "ir"
+};
+
+var girl = {
+	spelling: "g  _  _  l",
+	fullSpelling: "g i r l",
+	imgName: "girl",
+	answerVowel: "ir"
+};
+
+var skirt = {
+	spelling: "s k  _  _  t",
+	fullSpelling: "s k i r t",
+	imgName: "skirt",
+	answerVowel: "ir"
+};
+
+var birthday = {
+	spelling: "b  _  _  t h d a y",
+	fullSpelling: "b i r t h d a y",
+	imgName: "birthday",
+	answerVowel: "ir"
+};
+
+var torch = {
+	spelling: "t  _  _  c h",
+	fullSpelling: "t o r c h",
+	imgName: "torch",
+	answerVowel: "or"
+};
+
+var sword = {
+	spelling: "s w  _  _  d",
+	fullSpelling: "s w o r d",
+	imgName: "sword",
+	answerVowel: "or"
+};
+
+var acorn = {
+	spelling: "a c  _  _  n",
+	fullSpelling: "a c o r n",
+	imgName: "acorn",
+	answerVowel: "or"
+};
+
+var storm = {
+	spelling: "s t  _  _  m",
+	fullSpelling: "s t o r m",
+	imgName: "storm",
+	answerVowel: "or"
+};
+
+var forty = {
+	spelling: "f  _  _  t y",
+	fullSpelling: "f o r t y",
+	imgName: "forty",
+	answerVowel: "or"
+};
+
+var objArray = [shark, spider, turtle, horse, squirrel, nerve, tiger, water, feather, germs, scarf, harp, garden, heart, marbles, farm, church, nurse, curtain, purse, turkey, circle, shirt, stir, bird, girl, skirt, birthday, torch, sword, acorn, storm, forty];
 
 //Variable to store random array element number
 var randomNum = 0;
@@ -50,7 +247,7 @@ var computerAnswer;
 
 var computerResponse;
 
-var userResponse;
+// var userResponse;
 
 var correctAnswer;
 
@@ -58,7 +255,9 @@ var score = 0;
 
 var nextWord = "true";
 
-var counter = 0;
+// var counter = 0;
+
+var previousRandomNum;
 
 function main(){
 
@@ -68,8 +267,31 @@ function main(){
 	$(".or").hide();
 	$(".ur").hide();
 
+	$(".wordClue").hide();
+	$(".imageClue").hide();
+	$(".imageContainer").hide();
+	$(".wordContainer").hide();
+	$(".vowelContainer").attr('style',  'background-color:rgb(0, 207, 206)');
+	$("body").attr('style',  'background-color:rgb(0, 207, 206)');
+	$("header").attr('style',  'background-color:rgb(0, 207, 206)');
+	$(".vowelContainer").addClass("monsters2");
 
+
+	//User clicks to begin game
 	$("#startGame").click(function(event){
+
+
+	$(".wordClue").show();
+	$(".imageClue").show();
+	$(".imageContainer").show();
+	$(".wordContainer").show();
+	$(".vowelContainer").attr('style',  'background-color:rgb(51, 51, 51)');
+	$("body").attr('style',  'background-color:rgb(51, 51, 51)');
+	$("header").attr('style',  'background-color:rgb(51, 51, 51)');
+	$(".vowelContainer").removeClass("monsters2");
+
+// \
+		$(".monsters").hide();
 		userVowel = null;
 		event.preventDefault();
 		// computerResponse = game();
@@ -90,6 +312,7 @@ function main(){
 
 		//Refreshes screen with new word or question
 		computerResponse = game();
+		
 	});
 
 
@@ -99,11 +322,19 @@ function main(){
 
 // Game function that runs the game
 function game(){
+
 		//Remove any previous loaded images
 		resetImage(randomNum);
 
+		previousRandomNum = randomNum;
+
 		//Generate random number to choose random question
 		randomNum = getRandom();
+
+		if (previousRandomNum === randomNum){
+			randomNum = getRandom();
+		}
+
 		// alert("Random # generated: " + randomNum);
 		
 		//Pass randomNum value to change word by selecting element in wordArray
@@ -116,7 +347,7 @@ function game(){
 		// changeAnswer(randomNum);
 		computerAnswer = changeAnswer(randomNum);
 		return computerAnswer;
-	}
+}
 
 
 //User selects answer on clicking a button, store user input in userVowel
@@ -186,7 +417,28 @@ function verifyResponse(userResponse){
 			$(".score").text(score);
 			
 			//Provide positive reinforcement
-			$(".result").text("Nice Job!");
+			if (score < 10){
+				$(".result").text("Nice Job!");
+			}
+			else{
+				$(".result").text("GAME OVER!");
+				$("#startGame").hide();
+				$(".wordClue").hide();
+				$(".imageClue").hide();
+				// $(".imageContainer").attr('style',  'background-color:rgb(181, 215, 3)');
+				// $(".wordContainer").attr('style',  'background-color:rgb(181, 215, 3)');
+				$(".imageContainer").hide();
+				$(".wordContainer").hide();
+				$(".vowelContainer").attr('style',  'background-color:rgb(181, 215, 3)');
+				$("body").attr('style',  'background-color:rgb(181, 215, 3)');
+				$("header").attr('style',  'background-color:rgb(181, 215, 3)');
+				$(".vowelContainer").addClass("monsters");
+			}
+
+
+
+
+
 			console.log("nextWord=" + nextWord);
 			
 			//Hide buttons to prevent user from adding to score 
@@ -200,7 +452,9 @@ function verifyResponse(userResponse){
 			changeFullSpelling(randomNum);
 
 			//Show next word button
-			$("#startGame").show();
+			if (score < 10){
+				$("#startGame").show();
+			}
 		}
 
 		//If user's response is incorrect
@@ -220,7 +474,7 @@ function verifyResponse(userResponse){
 
 // Get random number to select elements from imageArray and wordArray randomly
 function getRandom() {
-  return Math.floor(Math.random() * (4 - 0 + 1)) + 0;
+  return Math.floor(Math.random() * ((objArray.length - 1) - 0 + 1)) + 0;
  }
 
 // Pass in random number to display word from wordArray

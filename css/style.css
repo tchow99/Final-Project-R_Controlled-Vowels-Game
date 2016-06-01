@@ -38,11 +38,10 @@
 /*******************************************/
 
 body {
-background-color: rgb(51, 51, 51);
+  background-color: rgb(51, 51, 51);
   font-size: 12px;
   line-height: 1.4;
   font-family: 'McLaren', cursive;
-  background color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -243,9 +242,125 @@ button.ur{
   background-image: url(../images/squirrel.png)
 }
 
+.tiger {
+  background-image: url(../images/tiger.png)
+}
 
+.nerve {
+  background-image: url(../images/nerve.png)
+}
 
+.water {
+  background-image: url(../images/water.jpeg)
+}
+ 
+.feather {
+  background-image: url(../images/feather.jpeg)
+}
 
+.germs{
+  background-image: url(../images/germs.jpeg)
+}
+
+.scarf{
+  background-image: url(../images/scarf.png)
+}
+
+.harp{
+  background-image: url(../images/harp.jpeg)
+}
+
+.garden{
+  background-image: url(../images/garden.jpeg)
+}
+
+.heart{
+  background-image: url(../images/heart.png)
+}
+
+.marbles{
+  background-image: url(../images/marbles.jpeg)
+}
+
+.farm{
+  background-image: url(../images/farm.jpeg)
+}
+
+.church{
+  background-image: url(../images/church.jpeg)
+}
+
+.nurse{
+  background-image: url(../images/nurse.jpeg)
+}
+
+.curtain{
+  background-image: url(../images/curtain.jpeg)
+}
+
+.purse{
+  background-image: url(../images/purse.gif)
+}
+
+.turkey{
+  background-image: url(../images/turkey.png)
+}
+
+.circle{
+  background-image: url(../images/circle.jpeg)
+}
+
+.shirt{
+  background-image: url(../images/shirt.png)
+}
+
+.stir{
+  background-image: url(../images/stir.png)
+}
+
+.bird{
+  background-image: url(../images/bird.gif)
+}
+
+.girl{
+  background-image: url(../images/girl.jpeg)
+}
+
+.skirt{
+  background-image: url(../images/skirt.png)
+}
+
+.birthday{
+  background-image: url(../images/birthday.jpeg)
+}
+
+.torch{
+  background-image: url(../images/torch.gif)
+}
+
+.sword{
+  background-image: url(../images/sword.png)
+}
+
+.acorn{
+  background-image: url(../images/acorn.png)
+}
+
+.storm{
+  background-image: url(../images/storm.png)
+}
+
+.forty{
+  background-image: url(../images/forty.png)
+}
+
+.monsters{
+  background-image: url(../images/threeCuteMonsters.png)
+}
+
+.monsters2{
+  background-image: url(../images/monsters2.jpg)
+}
 
 
 /******************************************
