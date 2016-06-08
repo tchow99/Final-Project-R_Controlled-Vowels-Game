@@ -66,13 +66,6 @@ var feather = {
 	answerVowel: "er"
 };
 
-var germs = {
-	spelling: "g  _  _  m  s",
-	fullSpelling: "g e r m s",
-	imgName: "germs",
-	answerVowel: "er"
-};
-
 var church = {
 	spelling: "c h  _  _  c h",
 	fullSpelling: "c h u r c h",
@@ -133,13 +126,6 @@ var heart = {
 	spelling: "h e  _  _  t",
 	fullSpelling: "h e a r t",
 	imgName: "heart",
-	answerVowel: "ar"
-};
-
-var marbles = {
-	spelling: "m  _  _  b l e s",
-	fullSpelling: "m a r b l e s",
-	imgName: "marbles",
 	answerVowel: "ar"
 };
 
@@ -235,7 +221,7 @@ var forty = {
 	answerVowel: "or"
 };
 
-var objArray = [shark, spider, turtle, horse, squirrel, nerve, tiger, water, feather, germs, scarf, harp, garden, heart, marbles, farm, church, nurse, curtain, purse, turkey, circle, shirt, stir, bird, girl, skirt, birthday, torch, sword, acorn, storm, forty];
+var objArray = [shark, spider, turtle, horse, squirrel, nerve, tiger, water, feather, scarf, harp, garden, heart, farm, church, nurse, curtain, purse, turkey, circle, shirt, stir, bird, girl, skirt, birthday, torch, sword, acorn, storm, forty];
 
 //Variable to store random array element number
 var randomNum = 0;
@@ -255,11 +241,18 @@ var score = 0;
 
 var nextWord = "true";
 
+
 // var counter = 0;
 
 var previousRandomNum;
 
+var obj = null;
+
+
+
 function main(){
+
+	//Resets screen with intital welcome screen
 
 	$(".ar").hide();
 	$(".er").hide();
@@ -271,10 +264,13 @@ function main(){
 	$(".imageClue").hide();
 	$(".imageContainer").hide();
 	$(".wordContainer").hide();
-	$(".vowelContainer").attr('style',  'background-color:rgb(0, 207, 206)');
-	$("body").attr('style',  'background-color:rgb(0, 207, 206)');
-	$("header").attr('style',  'background-color:rgb(0, 207, 206)');
+	$(".vowelContainer").attr('style',  'background-color:rgb(51, 51, 51)');
+	$("body").attr('style',  'background-color:rgb(51, 51, 51)');
+	$("header").attr('style',  'background-color:rgb(51, 51, 51)');
 	$(".vowelContainer").addClass("monsters2");
+	$(".playAgain").hide();
+
+	obj=null;
 
 
 	//User clicks to begin game
@@ -290,34 +286,48 @@ function main(){
 	$("header").attr('style',  'background-color:rgb(51, 51, 51)');
 	$(".vowelContainer").removeClass("monsters2");
 
-// \
-		$(".monsters").hide();
-		userVowel = null;
-		event.preventDefault();
-		// computerResponse = game();
+
+	// Hide monsters wallpaper
+	$(".monsters").hide();
+
+	// Listen for user's choice (of r-controlled vowels)
+	userVowel = null;
+	event.preventDefault();
+	
 		
-		//Give user a new question and stores the correct answer in computerResponse
-		$(".result").text("**********************");
+	//Give user a new question and stores the correct answer in computerResponse
+	$(".result").text("**********************");
 
 
-		$("#startGame").hide();
-		$("h1").hide();
+	$("#startGame").hide();
+	$("h1").hide();
 
-		//Show answer choices at the beginning of game
-		$(".ar").show();
-		$(".er").show();
-		$(".ir").show();
-		$(".or").show();
-		$(".ur").show();
+	//Show answer choices at the beginning of game
+	$(".ar").show();
+	$(".er").show();
+	$(".ir").show();
+	$(".or").show();
+	$(".ur").show();
 
-		//Refreshes screen with new word or question
-		computerResponse = game();
+  
+	//Refreshes screen with new word or question
+	computerResponse = game();
+
+
+		// Play sound hint when user clicks image
+			obj = document.createElement("audio");
+		    obj.src="https://ssl.gstatic.com/dictionary/static/sounds/de/0/" + objArray[randomNum].imgName +".mp3";
+			obj.volume=0.4;
+			obj.autoPlay=false;
+		    obj.preLoad=true;       
+		 
+		$(".playSound").click(function() {
+			obj.play();
+		});
 		
 	});
 
-
 }
-
 
 
 // Game function that runs the game
@@ -347,7 +357,9 @@ function game(){
 		// changeAnswer(randomNum);
 		computerAnswer = changeAnswer(randomNum);
 		return computerAnswer;
+
 }
+
 
 
 //User selects answer on clicking a button, store user input in userVowel
@@ -398,6 +410,7 @@ function game(){
 	});
 
 
+
 // Check userResponse against computerResponse
 function verifyResponse(userResponse){
 	// alert("run");
@@ -412,16 +425,30 @@ function verifyResponse(userResponse){
 			//Resets userVowel / user's response
 			userVowel =  null;
 
+
 			//Add point to score
 			score = score + 1;
 			$(".score").text(score);
 			
 			//Provide positive reinforcement
 			if (score < 10){
-				$(".result").text("Nice Job!");
+				if(randomNum > 10){
+					$(".result").text("Nice Job!");
+				}
+				else if(randomNum > 9 && randomNum < 20){
+					$(".result").text("Awesome!");
+				}
+				else if(randomNum > 19 && randomNum < 30){
+					$(".result").text("Bravo!");
+				}
+				else{
+					$(".result").text("Hooray!");
+				}
+
 			}
 			else{
-				$(".result").text("GAME OVER!");
+
+				$(".result").text("Game Over!");
 				$("#startGame").hide();
 				$(".wordClue").hide();
 				$(".imageClue").hide();
@@ -429,14 +456,25 @@ function verifyResponse(userResponse){
 				// $(".wordContainer").attr('style',  'background-color:rgb(181, 215, 3)');
 				$(".imageContainer").hide();
 				$(".wordContainer").hide();
-				$(".vowelContainer").attr('style',  'background-color:rgb(181, 215, 3)');
-				$("body").attr('style',  'background-color:rgb(181, 215, 3)');
-				$("header").attr('style',  'background-color:rgb(181, 215, 3)');
+				$(".vowelContainer").attr('style',  'background-color:rgb(255, 197, 0)');
+				$("body").attr('style',  'background-color:rgb(255, 197, 0)');
+				$("header").attr('style',  'background-color:rgb(255, 197, 0)');
 				$(".vowelContainer").addClass("monsters");
-			}
+				$(".playAgain").show();
+
+				// Play Cheering Sound
+				var audio = document.getElementsByTagName("audio")[0];
+				audio.play();
+				
+
+				// Reload the current page, without using the cache, on click "Play Again" button
+				$(".playAgain").click(function(){
+					document.location.reload(true);
+				});
+				}
 
 
-
+				
 
 
 			console.log("nextWord=" + nextWord);
@@ -460,7 +498,6 @@ function verifyResponse(userResponse){
 		//If user's response is incorrect
 		else{
 			console.log("Incorrect");
-
 			
 			//Provide words of encouragement
 			$(".result").text("Try again!");
@@ -503,6 +540,10 @@ function changeAnswer(indexNum){
 	// alert("Correct Answer = " + correctAnswer);
 	return correctAnswer;
 }
+
+
+
+
 
 
 

@@ -20,17 +20,17 @@
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 .alignright {
-	float: right;
-	padding: 0 0 10px 10px; /* note the padding around a right floated image */
+  float: right;
+  padding: 0 0 10px 10px; /* note the padding around a right floated image */
 }
 
 .alignleft {
-	float: left;
-	padding: 0 10px 10px 0; /* note the padding around a left floated image */
+  float: left;
+  padding: 0 10px 10px 0; /* note the padding around a left floated image */
 }
 
 /******************************************
@@ -49,11 +49,11 @@ body {
 }
 
 h1{
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 2px;
 }
 h2{
-  font-size: 5px
+  font-size: 25px;
   margin-bottom: 5px;
 }
 
@@ -85,6 +85,12 @@ button{
   font-family: 'McLaren', cursive;
 }
 
+button:hover{
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
 #startGame {
   font-size: 30px;
   height: 50px;
@@ -92,8 +98,32 @@ button{
   border-radius: 10px;
   margin-bottom: 5px;
   background-color: rgb(255, 197, 0);
-  margin-left: 46.5%;
 }
+
+#startGame:hover{
+  background-color: rgb(181, 215, 3);
+  border-color: rgb(181, 215, 3);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.playAgain {
+  font-size: 30px;
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background-color: rgb(0, 207, 206);
+}
+
+.playAgain:hover{
+  background-color: rgb(181, 215, 3);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
 
 button.ar{
   height: 130px;
@@ -355,12 +385,28 @@ button.ur{
 }
 
 .monsters{
-  background-image: url(../images/threeCuteMonsters.png)
+  background-image: url(../images/threeCuteMonsters.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .monsters2{
-  background-image: url(../images/monsters2.jpg)
+  background-image: url(../images/monsters2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
+
+.monsters:hover{
+  background-image: url(../images/threeCuteMonsters.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: scale(1.1);
+  transform: rotate(10deg);
+}
+
 
 
 /******************************************
