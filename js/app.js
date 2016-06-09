@@ -223,6 +223,9 @@ var forty = {
 
 var objArray = [shark, spider, turtle, horse, squirrel, nerve, tiger, water, feather, scarf, harp, garden, heart, farm, church, nurse, curtain, purse, turkey, circle, shirt, stir, bird, girl, skirt, birthday, torch, sword, acorn, storm, forty];
 
+
+//GLOBAL VARIABLES
+
 //Variable to store random array element number
 var randomNum = 0;
 
@@ -248,6 +251,11 @@ var previousRandomNum;
 
 var obj = null;
 
+var currentQuestion = -1;
+
+var numQuestions = 10;
+
+var objTracker = new Array(numQuestions);
 
 
 function main(){
@@ -276,6 +284,8 @@ function main(){
 	//User clicks to begin game
 	$("#startGame").click(function(event){
 
+	currentQuestion = currentQuestion + 1;
+	console.log("currentQuestion: " + currentQuestion);
 
 	$(".wordClue").show();
 	$(".imageClue").show();
@@ -336,16 +346,39 @@ function game(){
 		//Remove any previous loaded images
 		resetImage(randomNum);
 
-		previousRandomNum = randomNum;
+		// previousRandomNum = randomNum;
 
-		//Generate random number to choose random question
-		randomNum = getRandom();
+		//Generate inital random number to choose random question
+		// randomNum = getRandom();
 
-		if (previousRandomNum === randomNum){
+
+		//Check if random number has already been called
+
+		//Flags random number. If random number found, flag is on and will exit array scan
+		var flag = 0;
+		var dupNum = 0;
+
+		while(flag === 0){
 			randomNum = getRandom();
+			console.log("randomNum: " + randomNum);
+			dupNum = 0;
+			
+			for(i = 0; i < (currentQuestion+1); i++){
+				//Stop scanning array
+				if(randomNum === objTracker[i]){
+					dupNum = 1;
+					break;				
+				}
+
+			}
+
+			if (dupNum === 0){
+				flag = 1;
+				objTracker[currentQuestion] = randomNum;
+			}
+
 		}
 
-		// alert("Random # generated: " + randomNum);
 		
 		//Pass randomNum value to change word by selecting element in wordArray
 		changeWord(randomNum);
@@ -431,8 +464,8 @@ function verifyResponse(userResponse){
 			$(".score").text(score);
 			
 			//Provide positive reinforcement
-			if (score < 10){
-				if(randomNum > 10){
+			if (score < numQuestions){
+				if(randomNum > numQuestions){
 					$(".result").text("Nice Job!");
 				}
 				else if(randomNum > 9 && randomNum < 20){
@@ -474,8 +507,6 @@ function verifyResponse(userResponse){
 				}
 
 
-				
-
 
 			console.log("nextWord=" + nextWord);
 			
@@ -490,7 +521,7 @@ function verifyResponse(userResponse){
 			changeFullSpelling(randomNum);
 
 			//Show next word button
-			if (score < 10){
+			if (score < numQuestions){
 				$("#startGame").show();
 			}
 		}
